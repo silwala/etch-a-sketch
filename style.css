@@ -17,8 +17,8 @@ body{
 .square-div{
     flex-grow: 0;
     flex-shrink: 0;
-    height: calc(600px / 16);
     background-color: #fff;
+    outline: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .controls{
@@ -29,17 +29,20 @@ body{
 }
 
 .control-buttons{
-    outline: #162521;
+    border: none;
+    outline: 2px solid #162521;
     color: #162521;
     background: none;
+    border-radius: 10px;
     width: 10em;
     font-size: 1.5em;
     padding: 10px;
+    transition: .1s;
 }
 
 .control-buttons:hover{
     background-color: #162521;
-    color: #C0E0DE;
+    color: #ffffff;
 }
 
 .grid-size{
@@ -85,6 +88,11 @@ body{
     height: 50px;
     background-color: #000000;
     border-radius: 25px;
+}
+
+.color-picker:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.296);
+    transform: scale(110%);
 }
 
 .colors{
