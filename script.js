@@ -8,6 +8,7 @@ const erase = document.querySelector('#erase');
 const clear = document.querySelector('#clear');
 const gridSizeValue = document.querySelector('#grid-size-value');
 const gridSize = document.querySelector('#grid-size');
+let mouseDown = false;
 
 function init(){
     let brushColor = colorWheel.value;
@@ -51,12 +52,24 @@ function init(){
         }
     });
     
-    container.addEventListener('mouseover', (e) => e.target.style.backgroundColor = brushColor);
+    container.addEventListener('mousedown', (e) => {
+        mouseDown = true
+        onDraw(e);
+    });
+    container.addEventListener('mouseup', () => mouseDown = false);
+    container.addEventListener('mouseover', onDraw)
     gridSize.addEventListener('change',() => {
         changeGridSizeText();
         changeGridSize(gridSize.value)
     })
     gridSize.addEventListener('mousemove', changeGridSizeText)
+
+    function onDraw(e){
+    
+            if(mouseDown === true){
+                e.target.style.backgroundColor = brushColor;
+            }
+    }
 }
 
 function changeGridSize(size){
@@ -71,6 +84,7 @@ function changeGridSize(size){
         console.log('created');  
     }
 }
+
 
 function changeGridSizeText(){
     gridSizeValue.textContent = `${gridSize.value}x${gridSize.value}`;
