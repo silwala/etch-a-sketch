@@ -88,6 +88,7 @@ body{
     height: 50px;
     background-color: #000000;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 .color-picker:hover{
