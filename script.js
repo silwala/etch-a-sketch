@@ -6,8 +6,8 @@ const colorPicker = document.querySelector('#color-picker');
 const draw = document.querySelector('#draw');
 const erase = document.querySelector('#erase');
 const clear = document.querySelector('#clear');
-const gridSize = document.querySelector('#grid-size');
 const gridSizeValue = document.querySelector('#grid-size-value');
+const gridSize = document.querySelector('#grid-size');
 
 function init(){
     let brushColor = colorWheel.value;
@@ -35,8 +35,16 @@ function init(){
 
     changeGridSize(gridSize.value);
 
-    draw.addEventListener('click', () => brushColor = colorWheel.value);
-    erase.addEventListener('click', () => brushColor = '#ffffff');
+    draw.addEventListener('click', () => {
+        brushColor = colorWheel.value;
+        draw.classList.add('active');
+        erase.classList.remove('active');
+}   );
+    erase.addEventListener('click', () => {
+        brushColor = '#ffffff'
+        draw.classList.remove('active');
+        erase.classList.add('active');
+    });
     clear.addEventListener('click', () => {
         for (const child of container.childNodes) {
             child.style.backgroundColor = '#ffffff'

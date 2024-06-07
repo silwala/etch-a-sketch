@@ -40,7 +40,7 @@ body{
     transition: .1s;
 }
 
-.control-buttons:hover{
+.control-buttons:hover,  .active{
     background-color: #162521;
     color: #ffffff;
 }
@@ -115,4 +115,3 @@ body{
     cursor: pointer;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.342);
 }
-
