@@ -38,10 +38,15 @@ body{
     width: 10em;
     font-size: 1.5em;
     padding: 10px;
-    transition: .1s;
+    transition: background-color .3s, color .1s;
 }
 
-.control-buttons:hover,  .active{
+.control-buttons:hover:not(.active){
+    background-color: #404d49;
+    color: #ffffff;
+}
+
+.active{
     background-color: #162521;
     color: #ffffff;
 }
